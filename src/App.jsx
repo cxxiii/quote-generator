@@ -24,7 +24,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="text-gray-900 subpixel-antialiased">
+    <div className="text-gray-900 text-shadow-sm subpixel-antialiased">
       <Router>
         <Switch>
           <Route

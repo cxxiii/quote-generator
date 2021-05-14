@@ -49,7 +49,7 @@ const Authors = () => {
         {quotes.map((quote) => (
           <blockquote
             key={quote._id}
-            className="mx-4 md:mx-16 pl-8 border-l-4 border-solid border-yellow-500 text-2xl md:text-4xl font-heading"
+            className="mx-4 md:mx-16 pl-8 border-l-4 border-solid border-yellow-500 text-2xl md:text-3xl font-heading"
           >
             {quote.quoteText}
           </blockquote>

@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-shadow-sm {
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 2px;
+}
+
+.text-shadow-md {
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 4px;
+}
+
+.text-shadow-lg {
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 6px;
+}
+
+
