@@ -1,5 +1,8 @@
-## Webdev Starter 🚀
+## Quote Generator 💬
 
-This is a light-weight boilerplate for quickstarting pretty much any new web development project.
+A simple random quote generator. Get random quotes from notable people and view collections of their quotes on individual author pages.
 
-Its aim is to be continuously optimized for speed, simplicity, and ease of use.
+### Features
+
+* Display random quotes with author name and quote genre
+* Click on an author's name to view their quotes on a separate page
