@@ -6,3 +6,5 @@ A simple random quote generator. Get random quotes from notable people and view 
 
 * Display random quotes with author name and quote genre
 * Click on an author's name to view their quotes on their author page (powered by React Router)
+
+API: github.com/pprathameshmore/QuoteGarden
