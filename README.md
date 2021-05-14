@@ -5,4 +5,4 @@ A simple random quote generator. Get random quotes from notable people and view 
 ### Features
 
 * Display random quotes with author name and quote genre
-* Click on an author's name to view their quotes on a separate page
+* Click on an author's name to view their quotes on their author page (powered by React Router)
