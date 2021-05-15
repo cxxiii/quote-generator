@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { ajax } from 'rxjs/ajax';
+import { map } from 'rxjs/operators';
 import Random from './Random';
 import Authors from './Authors';
 
@@ -8,15 +10,15 @@ const App = () => {
   const [author, setAuthor] = useState('');
   const [genre, setGenre] = useState('');
 
-  const getRandomQuote = async () => {
-    const raw = await fetch(
+  const getRandomQuote = () => {
+    const res = ajax(
       'https://quote-garden.herokuapp.com/api/v3/quotes/random'
-    );
-    const res = await raw.json();
-
-    setQuote(res.data[0].quoteText);
-    setAuthor(res.data[0].quoteAuthor);
-    setGenre(res.data[0].quoteGenre);
+    ).pipe(map((e) => e.response));
+    res.subscribe((res) => {
+      setQuote(res.data[0].quoteText);
+      setAuthor(res.data[0].quoteAuthor);
+      setGenre(res.data[0].quoteGenre);
+    });
   };
 
   useEffect(() => {

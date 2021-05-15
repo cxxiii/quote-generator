@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { ajax } from 'rxjs/ajax';
+import { map } from 'rxjs/operators';
 
 const Authors = () => {
   const { name } = useParams();
   const [quotes, setQuotes] = useState([]);
 
-  const getAuthorQuotes = async () => {
-    const raw = await fetch(
+  const getAuthorQuotes = () => {
+    const res = ajax(
       `https://quote-garden.herokuapp.com/api/v3/quotes?author=${name.replace(
         '-',
         '%20'
       )}`
-    );
-    const res = await raw.json();
-
-    setQuotes(res.data);
+    ).pipe(map((e) => e.response));
+    res.subscribe((res) => {
+      setQuotes(res.data);
+    });
   };
 
   useEffect(() => {
